@@ -1,5 +1,5 @@
 // CategoriesSection.jsx
-import React from "react";
+import React, { useEffect } from "react";
 
 const CategoriesSection = ({
   ActiveCategory,

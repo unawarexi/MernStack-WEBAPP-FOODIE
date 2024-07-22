@@ -8,45 +8,8 @@ import { CategoriesContext } from "../../context/ContextProvider";
 const HeroSection = () => {
   const { ActiveCategory, categories, selectedCategory } =
     useContext(CategoriesContext);
-  // const [ActiveCategory, setActiveCategory] = useState("");
-  // const [categories, setCategories] = useState([]);
-
-  // const API_GET_CATEGORIES =
-  //   "https://themealdb.com/api/json/v1/1/categories.php";
-
-  // const getCategories = async () => {
-  //   try {
-  //     const response = await axios.get(API_GET_CATEGORIES);
-  //     if (response && response.data && response.data.categories) {
-  //       setCategories(response.data.categories);
-  //       console.log(response.data.categories);
-  //     } else {
-  //       console.log("Error: Invalid response data");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error:", "An error occurred while fetching data");
-  //   }
-  // };
-
-  // // to mount components
-  // useEffect(() => {
-  //   getCategories();
-  // }, []);
-
-  // // to select active components
-  // const selectedCategory = (category) => {
-  //   setActiveCategory(category);
-  // };
-
   return (
     <section className="items-center justify-center">
-      {/* <div className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap md:text-left text-center order-first">
-
-          </div>
-        </div> */}
-
       <div className="bg-gray-100 w-full rounded-lg ">
         <div className="px-5 py-6 mx-auto lg:flex grid grid-cols-1 justify-center items-center relative">
           {/* ------------ Search Bar ------------- */}

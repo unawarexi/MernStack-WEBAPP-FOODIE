@@ -5,20 +5,27 @@ import axios from "axios";
 const CategoriesContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  // State to hold the active category
+  /**
+   * State to hold the active category
+   * State to hold the list of categories
+   * State to hold the list of meals
+   *
+   * tips, study state management and applications
+   */
   const [ActiveCategory, setActiveCategory] = useState("");
-  // State to hold the list of categories
   const [categories, setCategories] = useState([]);
-  // State to hold the list of meals
   const [meals, setMeals] = useState([]);
 
-  // API endpoint to get categories
-  const API_GET_CATEGORIES =
-    "https://themealdb.com/api/json/v1/1/categories.php";
-  // API endpoint to get meals filtered by category
-  const API_GET_RECIPES = "https://themealdb.com/api/json/v1/1/filter.php?c=";
+  /** ------------------------ API ENDPOINTS TO GET DATA
+   * API endpoints to get categories
+   * API endpoint to get meals filtered by category
+   *
+   * tips: read axios, error,  handling here
+   */
+  const API_GET_CATEGORIES = import.meta.API_GET_CATEGORIES;
+  const API_GET_RECIPES = import.meta.API_GET_RECIPES;
 
-  // Function to fetch categories from the API
+  //---------------------------- Function to fetch categories from the API
   const getCategories = async () => {
     try {
       const response = await axios.get(API_GET_CATEGORIES);
@@ -33,7 +40,7 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  // Function to fetch meals for a specific category from the API
+  //---------------------- Function to fetch meals for a SPECIFIC category from the API
   const getRecipes = async (category = "Beef") => {
     try {
       const getRecipeUrl = `${API_GET_RECIPES}${category}`;
@@ -49,7 +56,7 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  // useEffect to fetch categories and default recipes when the component mounts
+  //------------------ useEffect to fetch categories and default recipes when the component mounts
   useEffect(() => {
     getCategories();
     getRecipes();
