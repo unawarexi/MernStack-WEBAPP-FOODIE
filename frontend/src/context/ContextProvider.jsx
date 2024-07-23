@@ -15,6 +15,11 @@ const ContextProvider = ({ children }) => {
   const [ActiveCategory, setActiveCategory] = useState("");
   const [categories, setCategories] = useState([]);
   const [meals, setMeals] = useState([]);
+  const [isDropDown, setisDropDown] = useState(false);
+
+  const PopOverCuisines = () => {
+    setisDropDown(!isDropDown);
+  };
 
   /** ------------------------ API ENDPOINTS TO GET DATA
    * API endpoints to get categories
@@ -22,8 +27,8 @@ const ContextProvider = ({ children }) => {
    *
    * tips: read axios, error,  handling here
    */
-  const API_GET_CATEGORIES = import.meta.API_GET_CATEGORIES;
-  const API_GET_RECIPES = import.meta.API_GET_RECIPES;
+  const API_GET_CATEGORIES = import.meta.env.VITE_API_GET_CATEGORIES;
+  const API_GET_RECIPES = import.meta.env.VITE_API_GET_RECIPES;
 
   //---------------------------- Function to fetch categories from the API
   const getCategories = async () => {
@@ -75,7 +80,14 @@ const ContextProvider = ({ children }) => {
   return (
     // Provide the context values to children components
     <CategoriesContext.Provider
-      value={{ ActiveCategory, categories, meals, selectedCategory }}
+      value={{
+        ActiveCategory,
+        categories,
+        meals,
+        selectedCategory,
+        isDropDown,
+        PopOverCuisines,
+      }}
     >
       {children}
     </CategoriesContext.Provider>

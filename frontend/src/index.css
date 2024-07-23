@@ -18,3 +18,28 @@
   margin: 0 auto;
   animation: spin 30s linear infinite;
 }
+
+/* for bell at the navbar */
+.icon__bell {
+  font-size: 50px;
+  animation: shake 5.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  2.5%,
+  22.5% {
+    transform: translateX(-10px);
+  }
+  5%,
+  20% {
+    transform: translateX(10px);
+  }
+  7.5%,
+  17.5% {
+    transform: translateX(-10px);
+  }
+}

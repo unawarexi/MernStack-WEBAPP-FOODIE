@@ -5,12 +5,13 @@ import { RightNavBar } from "./ExportRight";
 import { HeroBg } from "../../assets/Image";
 
 import { CategoriesContext } from "../../context/ContextProvider";
+import { CuisinesDropDown } from "../../container/ExportContainer";
 const HeroSection = () => {
-  const { ActiveCategory, categories, selectedCategory } =
+  const { ActiveCategory, categories, selectedCategory, isDropDown } =
     useContext(CategoriesContext);
   return (
     <section className="items-center justify-center">
-      <div className="bg-gray-100 w-full rounded-lg ">
+      <div className="bg-gray-100 w-full rounded-lg z-50">
         <div className="px-5 py-6 mx-auto lg:flex grid grid-cols-1 justify-center items-center relative">
           {/* ------------ Search Bar ------------- */}
           <div className="md:mx-4 flex items-center w-full rounded-full bg-white p-3 relative">
@@ -28,6 +29,7 @@ const HeroSection = () => {
           <RightNavBar />
         </div>
       </div>
+      <div className="z-[999999]">{isDropDown && <CuisinesDropDown />}</div>
 
       {/* -------------------------- CATEGORIES SECTION -------------------- */}
       <div className="m-10 items-center justify-center">
