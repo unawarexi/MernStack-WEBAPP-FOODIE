@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { BgVideo } from "../../assets/Image"; // Adjust the path accordingly
+import { BgVideo } from "../../assets/Image";
 
 const Authentication = () => {
   const [isLogged, setIsLogged] = useState(false);
