@@ -5,9 +5,17 @@ import { GiHotMeal } from "react-icons/gi";
 import { GiRingingBell } from "react-icons/gi";
 import { CuisinesDropDown } from "../container/ExportContainer";
 import { CategoriesContext } from "../context/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const { PopOverCuisines, isDropDown } = useContext(CategoriesContext);
+  const [IsAuthenticated, setIsAuthenticated] = useState(true);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    setIsAuthenticated(false);
+    navigate("/");
+  };
 
   return (
     <section>
@@ -43,8 +51,11 @@ function Header() {
             />
           </div>
 
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            Button
+          <button
+            onClick={handleLogOut}
+            className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+          >
+            {IsAuthenticated ? <>Logout</> : <>Login</>}
             <svg
               fill="none"
               stroke="currentColor"
