@@ -2,4 +2,4 @@
 export { default as Logo } from "./food/logo.png";
 export { default as HeroBg } from "./food/cu6.png";
 
-// export { default as BgVideo } from "./food/landingVid.mp4";
+export { default as BgVideo } from "./food/landingVid.mp4";
