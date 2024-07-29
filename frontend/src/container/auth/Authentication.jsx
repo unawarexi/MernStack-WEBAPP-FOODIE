@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { LoginBg } from "../../assets/Image";
+// import { BgVideo } from "../../assets/Image"
 
 const Authentication = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -21,7 +21,6 @@ const Authentication = () => {
   return (
     <section className="text-gray-600 body-font relative">
       <div className="absolute inset-0 bg-gray-300">
-        <img src={LoginBg} alt="" className="h-full w-full object-cover" />
         {/* <video
           src={BgVideo}
           className="h-full w-full object-cover"
